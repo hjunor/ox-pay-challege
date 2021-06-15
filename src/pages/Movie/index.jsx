@@ -63,7 +63,7 @@ function Movie() {
           {movie.actors}
         </StylesActors>
         <span>
-          <StylesText>Generos:</StylesText>
+          <StylesText>Gêneros:</StylesText>
           {movie.genres.map((item) => (
             <StylesGeners key={item}>{item}</StylesGeners>
           ))}
