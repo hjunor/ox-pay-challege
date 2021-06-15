@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
+import { Redirect } from "react-router";
 import { UserContext } from "../../data/userContext";
 
 import {
@@ -10,13 +11,19 @@ import {
   StylesDescription,
   StylesText,
   StylesGeners,
+  StylesActors,
+  StylesDirector,
 } from "./styles";
 
 function Movie() {
   const { movie } = useContext(UserContext);
-  const [img, setImg] = useState(
-    "https://bootstrap-cheatsheet.themeselection.com/assets/images/bs-images/img-3x4.png"
-  );
+
+  if (!movie) {
+    <Redirect to="/" />;
+  }
+  const IMG =
+    "https://bootstrap-cheatsheet.themeselection.com/assets/images/bs-images/img-3x4.png";
+  const [img, setImg] = useState(IMG);
 
   useEffect(() => {
     async function pickImage() {
@@ -26,18 +33,18 @@ function Movie() {
           setImg(movie.posterUrl);
         }
       } catch (error) {
-        setImg(
-          "https://bootstrap-cheatsheet.themeselection.com/assets/images/bs-images/img-3x4.png"
-        );
+        setImg(IMG);
       }
     }
 
     pickImage();
   }, [movie]);
-
+  if (!movie) {
+    return <Redirect to="/" />;
+  }
   return (
     <Container>
-      {movie ? (
+      {movie && (
         <>
           <StylesImg src={img} alt="poster" />
           <div>
@@ -50,14 +57,14 @@ function Movie() {
               <StylesText>Trama:</StylesText>
               {movie.plot}
             </StylesDescription>
-            <h1>
+            <StylesDirector>
               <StylesText>Diretor:</StylesText>
               {movie.director}
-            </h1>
-            <h1>
+            </StylesDirector>
+            <StylesActors>
               <StylesText>Atores:</StylesText>
               {movie.actors}
-            </h1>
+            </StylesActors>
             <span>
               <StylesText>Generos:</StylesText>
               {movie.genres.map((item) => (
@@ -66,8 +73,6 @@ function Movie() {
             </span>
           </div>
         </>
-      ) : (
-        <br />
       )}
     </Container>
   );

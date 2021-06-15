@@ -2,8 +2,8 @@ import { useContext } from "react";
 import { UserContext } from "../../data/userContext";
 import {
   Container,
-  StylesDesc,
-  StylesName,
+  StylesYear,
+  StylesTitle,
   Icon,
   StylesGenres,
   StylesSpan,
@@ -20,8 +20,8 @@ const Card = (props) => {
       }}
     >
       <Icon />
-      <StylesName>{props.title} </StylesName>
-      <StylesDesc>{props.year}</StylesDesc>
+      <StylesTitle>{props.title} </StylesTitle>
+      <StylesYear>{props.year}</StylesYear>
       <StylesGenres>
         {props.genres.map((item) => (
           <StylesSpan>{item}</StylesSpan>

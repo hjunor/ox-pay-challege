@@ -1,3 +1,4 @@
+import { MoviesAndTv } from "@styled-icons/fluentui-system-filled";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -6,23 +7,18 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
+  div {
+    display: flex;
+    align-items: center;
+  }
 `;
 export const WraperMenu = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: 90%;
   max-width: 1230px;
   height: 60px;
-  @media screen and (max-width: 600px) {
-    width: 80%;
-  }
-  @media screen and (max-width: 980px) {
-    width: 80%;
-  }
-  @media screen and (max-width: 1380px) {
-    width: 80%;
-  }
 `;
 export const TextLogo = styled.div`
   display: flex;
@@ -38,4 +34,14 @@ export const TextLogo = styled.div`
     font-weight: bold;
     margin-bottom: 0px;
   }
+`;
+
+export const Icon = styled(MoviesAndTv)`
+  color: ${(props) => props.theme.colors.icon};
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  border-radius: 4px;
+  padding: 8px;
+  background: transparent;
 `;

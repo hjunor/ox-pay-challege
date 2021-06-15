@@ -21,6 +21,10 @@ export default createGlobalStyle`
     font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     width: 100%;
     height: 100vh;
+    @media screen and (max-width: 600px) {
+    padding-bottom: 140px;
+    
+  }
   }
 
   .animeLeft {

@@ -2,7 +2,13 @@ import { useContext } from "react";
 import { UserContext } from "../../data/userContext";
 import Card from "../../components/Card";
 
-import { ArrowNext, ArrowBack, Container, ArrowPages } from "./styled";
+import {
+  ArrowNext,
+  ArrowBack,
+  Container,
+  ArrowPages,
+  StylesText,
+} from "./styled";
 function Movies() {
   const { movies, setPage, setMaxPage, maxPage, page, total } =
     useContext(UserContext);
@@ -24,7 +30,7 @@ function Movies() {
     <Container>
       <ArrowPages>
         <div>
-          <span for="movies">Quantidade: </span>
+          <StylesText for="movies">Quantidade: </StylesText>
           <select
             onChange={handleSelect}
             id="movies"
@@ -38,7 +44,7 @@ function Movies() {
           </select>
         </div>
         <div>
-          <span>pagina</span>
+          <StylesText>Pagina</StylesText>
           {page === 1 ? (
             <ArrowBack color="#fff" />
           ) : (
@@ -54,8 +60,8 @@ function Movies() {
           <span>{total}</span>
         </div>
       </ArrowPages>
-      {movies.map((film) => (
-        <Card {...film} />
+      {movies.map((movie) => (
+        <Card key={movie} {...movie} />
       ))}
     </Container>
   );
