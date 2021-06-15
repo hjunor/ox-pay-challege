@@ -32,8 +32,10 @@ export const Container = styled.div`
 export const StylesImg = styled.img`
   width: 300px;
   height: 420px;
-  border-radius: 8px;
+  border-radius: 8px 0 0 8px;
   @media screen and (max-width: 600px) {
+    border-radius: 8px;
+
     width: 100%;
     height: 420px;
   }
