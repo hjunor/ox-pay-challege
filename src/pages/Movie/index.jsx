@@ -18,9 +18,6 @@ import {
 function Movie() {
   const { movie } = useContext(UserContext);
 
-  if (!movie) {
-    <Redirect to="/" />;
-  }
   const IMG =
     "https://bootstrap-cheatsheet.themeselection.com/assets/images/bs-images/img-3x4.png";
   const [img, setImg] = useState(IMG);
@@ -39,6 +36,7 @@ function Movie() {
 
     pickImage();
   }, [movie]);
+
   if (!movie) {
     return <Redirect to="/" />;
   }
