@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const getApiUrl = (path) => {
-  return `${process.env.REACT_APP_API$}${path}`;
+  return `${process.env.REACT_APP_API}${path}`;
 };
 
 export const apiGetNoCache = (path = "") => {
