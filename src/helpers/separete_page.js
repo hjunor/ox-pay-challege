@@ -5,7 +5,7 @@ export const separete_page = (items, max, index = 1) => {
     return accumulator;
   }, []);
   return {
-    films: data[index - 1],
+    movieList: data[index - 1],
     pages: data.length,
     indexPage: index,
   };

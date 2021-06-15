@@ -31,14 +31,15 @@ export const UserStorage = ({ children }) => {
 
       const { movies } = data;
 
-      const { films, pages } = separete_page(movies, maxPage, page);
+      const { movieList, pages } = separete_page(movies, maxPage, page);
 
       setTotal(pages);
-      setMovies(films);
+
+      setMovies(movieList);
     }
 
     handlerData();
-  }, [page, maxPage, setTheme]);
+  }, [page, maxPage]);
 
   useEffect(() => {
     localStorage.setItem("theme", theme.title);
@@ -47,6 +48,7 @@ export const UserStorage = ({ children }) => {
   const toggleTheme = () => {
     setTheme(theme.title === "light" ? dark : light);
   };
+
   return (
     <Provider
       value={{
