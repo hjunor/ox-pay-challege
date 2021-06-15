@@ -32,7 +32,7 @@ export const Container = styled.div`
   select {
     background-color: ${(props) => props.theme.colors.primary};
     color: ${(props) => props.theme.colors.text};
-    width: 50px;
+    width: 70px;
     padding: 4px;
     box-shadow: 0px 0px 0px 1px #c1c9c9 inset;
 
