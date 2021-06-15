@@ -30,7 +30,7 @@ function Movies() {
     <Container>
       <ArrowPages>
         <div>
-          <StylesText for="movies">Quantidade: </StylesText>
+          <StylesText>Quantidade: </StylesText>
           <select
             onChange={handleSelect}
             id="movies"

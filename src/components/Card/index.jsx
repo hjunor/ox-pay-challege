@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Redirect } from "react-router";
 import { UserContext } from "../../data/userContext";
 import {
   Container,
@@ -11,20 +12,19 @@ import {
 
 const Card = (props) => {
   const { setMovie } = useContext(UserContext);
+
+  function handleMovie() {
+    setMovie(props);
+    return <Redirect to="/movie" />;
+  }
   return (
-    <Container
-      className="animeLeft"
-      to="/movie"
-      onClick={(e) => {
-        setMovie(props);
-      }}
-    >
+    <Container className="animeLeft" to="/movie" onClick={handleMovie}>
       <Icon />
       <StylesTitle>{props.title} </StylesTitle>
       <StylesYear>{props.year}</StylesYear>
       <StylesGenres>
         {props.genres.map((item) => (
-          <StylesSpan>{item}</StylesSpan>
+          <StylesSpan key={item}>{item}</StylesSpan>
         ))}
       </StylesGenres>
     </Container>

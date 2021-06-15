@@ -47,7 +47,7 @@ export const UserStorage = ({ children }) => {
   const toggleTheme = () => {
     setTheme(theme.title === "light" ? dark : light);
   };
-
+  console.log(process.env.REACT_APP_API);
   return (
     <Provider
       value={{

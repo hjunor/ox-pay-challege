@@ -40,38 +40,35 @@ function Movie() {
   if (!movie) {
     return <Redirect to="/" />;
   }
+
   return (
     <Container>
-      {movie && (
-        <>
-          <StylesImg src={img} alt="poster" />
-          <div>
-            <StylesTitle>{movie.title}</StylesTitle>
-            <StylesYear>
-              <StylesText>Ano:</StylesText>
-              {movie.year}
-            </StylesYear>
-            <StylesDescription>
-              <StylesText>Trama:</StylesText>
-              {movie.plot}
-            </StylesDescription>
-            <StylesDirector>
-              <StylesText>Diretor:</StylesText>
-              {movie.director}
-            </StylesDirector>
-            <StylesActors>
-              <StylesText>Atores:</StylesText>
-              {movie.actors}
-            </StylesActors>
-            <span>
-              <StylesText>Generos:</StylesText>
-              {movie.genres.map((item) => (
-                <StylesGeners>{item}</StylesGeners>
-              ))}
-            </span>
-          </div>
-        </>
-      )}
+      <StylesImg src={img} alt="poster" />
+      <div>
+        <StylesTitle>{movie.title}</StylesTitle>
+        <StylesYear>
+          <StylesText>Ano:</StylesText>
+          {movie.year}
+        </StylesYear>
+        <StylesDescription>
+          <StylesText>Trama:</StylesText>
+          {movie.plot}
+        </StylesDescription>
+        <StylesDirector>
+          <StylesText>Diretor:</StylesText>
+          {movie.director}
+        </StylesDirector>
+        <StylesActors>
+          <StylesText>Atores:</StylesText>
+          {movie.actors}
+        </StylesActors>
+        <span>
+          <StylesText>Generos:</StylesText>
+          {movie.genres.map((item) => (
+            <StylesGeners key={item}>{item}</StylesGeners>
+          ))}
+        </span>
+      </div>
     </Container>
   );
 }
