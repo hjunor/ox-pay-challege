@@ -18,9 +18,9 @@ import {
 function Movie() {
   const { movie } = useContext(UserContext);
 
-  const IMG =
+  const imgDefault =
     "https://bootstrap-cheatsheet.themeselection.com/assets/images/bs-images/img-3x4.png";
-  const [img, setImg] = useState(IMG);
+  const [img, setImg] = useState(imgDefault);
 
   useEffect(() => {
     async function pickImage() {
@@ -30,7 +30,7 @@ function Movie() {
           setImg(movie.posterUrl);
         }
       } catch (error) {
-        setImg(IMG);
+        setImg(imgDefault);
       }
     }
 
@@ -64,8 +64,8 @@ function Movie() {
         </StylesActors>
         <span>
           <StylesText>Gêneros:</StylesText>
-          {movie.genres.map((item) => (
-            <StylesGeners key={item}>{item}</StylesGeners>
+          {movie.genres.map((item, index) => (
+            <StylesGeners key={index}>{item}</StylesGeners>
           ))}
         </span>
       </div>

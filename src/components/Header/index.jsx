@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Switch from "react-switch";
 import { ThemeContext } from "styled-components";
-import { Container, WraperMenu, TextLogo, Icon } from "./styles";
+import { Container, WraperMenu, StyelsLogo, Icon } from "./styles";
 import { shade } from "polished";
 import { UserContext } from "../../data/userContext";
 import { Tooltip } from "react-tippy";
@@ -15,11 +15,10 @@ const Header = () => {
   return (
     <Container>
       <WraperMenu>
-        <TextLogo>
+        <StyelsLogo>
           <Icon />
-
-          <Link to="/">Movies</Link>
-        </TextLogo>
+          <Link to="/">Movie</Link>
+        </StyelsLogo>
         <Tooltip title={title === "dark" ? "Light" : "Dark"}>
           <div>
             <Switch

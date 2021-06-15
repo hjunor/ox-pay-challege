@@ -10,7 +10,7 @@ import {
   StylesText,
 } from "./styled";
 function Movies() {
-  const { movies, setPage, setMaxPage, maxPage, page, total } =
+  const { movies, setPage, setMaxPage, maxPage, page, pageTotal } =
     useContext(UserContext);
 
   function handleNextPage() {
@@ -51,17 +51,17 @@ function Movies() {
             <ArrowBack onClick={handlePreviousPage}></ArrowBack>
           )}
           <span>{page}</span>
-          {page === total ? (
+          {page === pageTotal ? (
             <ArrowNext />
           ) : (
             <ArrowNext onClick={handleNextPage}></ArrowNext>
           )}
 
-          <span>{total}</span>
+          <span>{pageTotal}</span>
         </div>
       </ArrowPages>
       {movies.map((movie) => (
-        <Card key={movie} {...movie} />
+        <Card key={movie.id} {...movie} />
       ))}
     </Container>
   );

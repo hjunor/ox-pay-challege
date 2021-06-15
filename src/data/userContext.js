@@ -11,10 +11,10 @@ const { Provider } = UserContext;
 
 export const UserStorage = ({ children }) => {
   const [movies, setMovies] = useState([]);
-  const [movie, setMovie] = useState(null);
+  const [movie, setMovie] = useState(false);
   const [page, setPage] = useState(1);
   const [maxPage, setMaxPage] = useState(5);
-  const [total, setTotal] = useState(10);
+  const [pageTotal, setPageTotal] = useState(10);
 
   const [theme, setTheme] = useState(() => {
     const storeTheme = localStorage.getItem("theme");
@@ -33,7 +33,7 @@ export const UserStorage = ({ children }) => {
 
       const { movieList, pages } = separete_page(movies, maxPage, page);
 
-      setTotal(pages);
+      setPageTotal(pages);
 
       setMovies(movieList);
     }
@@ -55,7 +55,7 @@ export const UserStorage = ({ children }) => {
         page,
         movies,
         maxPage,
-        total,
+        pageTotal,
         setMaxPage,
         setPage,
         toggleTheme,

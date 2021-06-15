@@ -23,8 +23,8 @@ const Card = (props) => {
       <StylesTitle>{props.title} </StylesTitle>
       <StylesYear>{props.year}</StylesYear>
       <StylesGenres>
-        {props.genres.map((item) => (
-          <StylesSpan key={item}>{item}</StylesSpan>
+        {props.genres.map((genre, index) => (
+          <StylesSpan key={index}>{genre}</StylesSpan>
         ))}
       </StylesGenres>
     </Container>

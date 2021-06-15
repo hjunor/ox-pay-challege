@@ -20,17 +20,14 @@ export const WraperMenu = styled.div`
   max-width: 1230px;
   height: 60px;
 `;
-export const TextLogo = styled.div`
+export const StyelsLogo = styled.div`
   display: flex;
   align-items: center;
-  img {
-    height: 30px;
-  }
   a {
     margin-left: -5px;
     margin-right: 10px;
     color: ${(props) => props.theme.colors.text};
-    font-size: 3vh;
+    font-size: 2rem;
     font-weight: bold;
     margin-bottom: 0px;
   }
