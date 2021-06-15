@@ -18,10 +18,10 @@ export const UserStorage = ({ children }) => {
 
   const [theme, setTheme] = useState(() => {
     const storeTheme = localStorage.getItem("theme");
-    if (storeTheme === "light") {
-      return light;
-    } else {
+    if (storeTheme === "dark") {
       return dark;
+    } else {
+      return light;
     }
   });
 
@@ -47,7 +47,6 @@ export const UserStorage = ({ children }) => {
   const toggleTheme = () => {
     setTheme(theme.title === "light" ? dark : light);
   };
-  console.log(process.env.REACT_APP_API);
   return (
     <Provider
       value={{
