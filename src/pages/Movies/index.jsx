@@ -30,11 +30,11 @@ function Movies() {
     <Container>
       <ArrowPages>
         <div>
-          <StylesText>Quantidade: </StylesText>
+          <StylesText htmlFor="amount">Quantidade: </StylesText>
           <select
             onChange={handleSelect}
-            id="movies"
-            name="quantidade"
+            id="amount"
+            name="amount"
             value={maxPage}
           >
             <option selected disabled></option>

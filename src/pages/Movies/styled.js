@@ -59,7 +59,7 @@ export const ArrowPages = styled.div`
   }
 `;
 
-export const StylesText = styled.span`
+export const StylesText = styled.label`
   font-size: 1rem;
   margin-right: 0.5rem;
   color: ${(props) => props.theme.colors.text};
